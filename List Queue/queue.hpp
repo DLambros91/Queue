@@ -7,6 +7,10 @@ class node {
 template <typename T>
 class queue {
     public:
+        queue() {
+            head = 0, tail = 0, size = 0;
+        }
+
         // Returns whether the queue is empty
         bool empty () {
             return size == 0;
@@ -19,5 +23,5 @@ class queue {
 
     private:
         int size;
-        
+        node<T> * head, * tail;
 };
