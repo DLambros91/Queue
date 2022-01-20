@@ -1,7 +1,8 @@
 template <typename T>
 class node {
-    node * next;
-    T data;
+    public:
+        node * next;
+        T data;
 };
 
 template <typename T>
@@ -19,6 +20,21 @@ class queue {
         // Returns number of queued nodes
         int getSize () {
             return size;
+        }
+
+        void enqueue ( T value ) {
+            if ( !size ) {
+                head = tail = new node<T>;
+                head->data = value;
+                head->next = 0;
+                size++;
+                return;
+            }
+            tail->next = new node<T>;
+            tail = tail->next;
+            tail->data = value;
+            size++;
+            return;
         }
 
     private:
