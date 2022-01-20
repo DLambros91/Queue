@@ -1,3 +1,5 @@
+#include <iostream>
+
 template <typename T>
 class node {
     public:
@@ -22,6 +24,7 @@ class queue {
             return size;
         }
 
+        // Adds value at the tail position of the LinkedList
         void enqueue ( T value ) {
             if ( !size ) {
                 head = tail = new node<T>;
@@ -35,6 +38,22 @@ class queue {
             tail->data = value;
             size++;
             return;
+        }
+
+        // Returns the value and removes least recently added element (head)
+        T dequeue () {
+            if ( !size ) {
+                std::cout << "ERROR: Nothing is in the queue." << std::endl;
+                return 0;
+            }
+
+            T value = head->data;
+
+            node<T> * tmp = head;
+            head = head->next;
+            delete tmp;
+            size--;
+            return value;
         }
 
     private:
