@@ -3,6 +3,9 @@
 ## Description
 
 ## API
+
+| Method      | Run Time        | Description|
+| ----------- | --------------- | --------- |       
 | enqueue (value: object) | O(1) | Adds value at position at tail |
 | dequeue ()              | O(1) | Returns value and removes least recently added element (front) |
 | empty ()                | O(1) | Determines whether the queue has any items in it |
