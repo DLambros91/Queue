@@ -1,7 +1,7 @@
 #include "queue.hpp"
 #include <iostream>
 
-int main () {
+int main ( int argc, char ** argv ) {
     queue<int> q;
 
     std::cout << "Is the queue empty? " << q.empty () << std::endl;
